@@ -5,12 +5,6 @@ const app = new Application()
 app.use(ve);
 
 app.use(router.routes());
-app.use(async (ctx) => {
-    await ctx.send({
-        root: `${Deno.cwd()}/static`,  
-        
-    })
-});
 
 app.use(async (ctx) => {
     await ctx.render('404');

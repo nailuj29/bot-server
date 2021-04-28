@@ -39,10 +39,10 @@ router.get('/bots/new', (ctx) => {
 
 })
 
-router.get('/static/', async (ctx) => {
-    await send(ctx, ctx.request.url.pathname, {
-        root: Deno.cwd() + "/static",
-    });
+router.get('/css/tailwind.css', async (ctx) => {
+    await ctx.send({
+        root: `${Deno.cwd()}/static`,
+    })
 });
 
 export default router;
