@@ -1,0 +1,18 @@
+<%- include("header", {title: 'Home'}) %> 
+<h1 class="content-center text-center font-black text-3xl underline">Bots</h1>
+<% for (let bot of bots) { %>
+    <a href="/bots/<%= bot.id %>" class="block no-underline bg-grey-100 dark:bg-grey-700 m-5 p-3 rounded shadow-lg hover:shadow-xl border-2 border-grey-300 dark:border-grey-900">
+        <span class="text-xl font-bold"><%= bot.name %></span>
+        <span class="material-icons float-right">
+            <% if (bot.online) { %> 
+                done
+            <% } else { %>
+                warning
+            <% } %>
+        </span>
+    </a>
+<% } %>
+<button class="font-bold bg-grey-100 hover:bg-grey-200 dark:bg-grey-700 dark:hover:bg-grey-800 border-2 rounded border-grey-300 dark:border-grey-900 p-3">
+    Add new
+</button>
+<%- include("footer") %> 
